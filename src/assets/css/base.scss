@@ -1,0 +1,338 @@
+$colors: (
+  "white": #fff,
+  "black": #4C4C4C,
+  "black1": #010101,
+  "gray": #9C9C9C,
+  "add": #63a6c9,
+  "delete": #d96d62,
+  "green": #3EA732,
+  "blue": #5CCAFE,
+  "blue1": #C5EAFB,
+  "blue2": #5189B7
+);
+$bgColors: (
+  "white": #fff,
+  "black": #000,
+  "gray": #ddd,
+  "efeff1": #efeff1,
+  "blue": #598BAD
+);
+
+// color
+@each $colorType, $color in $colors {
+  .color-#{$colorType} {
+    color: $color;
+  }
+}
+
+//background-color
+@each $bgColorsType, $bgColors in $bgColors {
+  .bg-#{$bgColorsType} {
+    background-color: $bgColors;
+  }
+}
+
+@for $index from 1 through 60 {
+  // width
+  .w#{$index*10} {
+    width: #{$index * 10}px;
+  }
+}
+
+@for $index from 1 through 20 {
+  // 宽度百分比
+  .pct#{$index * 5} {
+    width: #{$index * 5%};
+  }
+  @if $index > 4 {
+    .w#{$index*20}i {
+      width: #{$index * 20}px !important;
+    }
+  }
+  // height
+  .h#{$index*20 + 100} {
+    height: #{$index * 20+100}px;
+  }
+
+  // font-size
+  .f#{$index*2 + 10} {
+    font-size: #{$index * 2+10}px;
+  }
+
+  // line-height
+  .lh#{$index*2 + 10} {
+    line-height: #{$index * 2+10}px;
+  }
+
+  // vertical-align
+  .vn#{$index - 10} {
+    vertical-align: #{$index - 10}px;
+  }
+
+  // border-radius
+  @if $index < 5 {
+    .border-radius-#{$index * 2} {
+      border-radius: #{$index * 2}px
+    }
+  }
+}
+
+// margin padding
+@for $index from 1 through 11 {
+  .m#{($index - 1) * 5} {
+    margin: #{($index - 1) * 5}px;
+  }
+  .ml#{($index - 1) * 5} {
+    margin-left: #{($index - 1) * 5}px;
+  }
+  .mr#{($index - 1) * 5} {
+    margin-right: #{($index - 1) * 5}px;
+  }
+  .mt#{($index - 1) * 5} {
+    margin-top: #{($index - 1) * 5}px;
+  }
+  .mb#{($index - 1) * 5} {
+    margin-bottom: #{($index - 1) * 5}px;
+  }
+  .p#{($index - 1) * 5} {
+    padding: #{($index - 1) * 5}px;
+  }
+  .pl#{($index - 1) * 5} {
+    padding-left: #{($index - 1) * 5}px;
+  }
+  .pr#{($index - 1) * 5} {
+    padding-right: #{($index - 1) * 5}px;
+  }
+  .pt#{($index - 1) * 5} {
+    padding-top: #{($index - 1) * 5}px;
+  }
+  .pb#{($index - 1) * 5} {
+    padding-bottom: #{($index - 1) * 5}px;
+  }
+}
+
+/* flex：定义布局为盒模型 */
+/* flex-v：盒模型垂直布局 */
+/* flex-1：子元素占据剩余的空间 */
+/* flex-center-y：子元素垂直居中 */
+/* flex-center-x：子元素水平居中 */
+/* flex-center-t：子元素顶部对齐 */
+/* flex-right-x：子元素水平右对齐 */
+.flex {
+  display: flex;
+  &-wrap {
+    flex-wrap: wrap;
+  }
+  &-vertical {
+    flex-direction: column;
+  }
+  &-1 {
+    flex: 1;
+  }
+  &-center-y {
+    align-items: center;
+  }
+  &-top-y {
+    align-items: start;
+  }
+  &-center-x {
+    justify-content: center;
+  }
+  &-right-x {
+    justify-content: flex-end;
+  }
+  &-space-between {
+    justify-content: space-between;
+  }
+  &-space-evenly {
+    justify-content: space-evenly;
+  }
+}
+.inline-flex {
+  display: inline-flex;
+}
+
+
+/* position */
+.rel{ position: relative; }
+.abs{ position: absolute; }
+
+/* 清楚浮动 */
+.clearfix:before, .clearfix:after { content: "";clear: both;display: table; }
+
+/* percent width value */
+.pct33 { width: 33.3%; }
+.pct49 { width: 49%; }
+.pct66 { width: 66.6%; }
+.pct92 { width: 92%; }
+.pct93 { width: 93%; }
+.pct94 { width: 94%; }
+.pct96 { width: 96%; }
+.pct97 { width: 97%; }
+.pct98 { width: 98%; }
+.pct99 { width: 99%; }
+.pct100i{ width: 100%!important }
+
+
+.fb{font-weight:bold;}
+.fn{font-weight:normal;}
+.t-indent{text-indent:2em;}
+
+/* text-align */
+.tc { text-align: center; }
+.tr { text-align: right; }
+.tl { text-align: left; }
+
+/* float */
+.fl{ float: left; }
+.fr { float: right; }
+
+/* 单行文字溢出虚点显 示*/
+.ell { text-overflow: ellipsis; white-space: nowrap; overflow: hidden;word-break: break-all }
+
+/* 基于display: table-cell的自适应布局 */
+.r-cell { display: table-cell; width: 2000px; }
+
+.vm { vertical-align: middle; }
+.vt { vertical-align: top; }
+
+.hide{ display: none; }
+.inline{ display: inline-block; }
+.block{ display: block }
+.of{ overflow: hidden; }
+.of-auto{ overflow: auto }
+.scrollY{ overflow-y: auto;overflow-x:hidden }
+.nowrap{ white-space: nowrap; }
+.tab-pane.active { display: block; }
+.tab-pane { display: none; clear: both; }
+.flex-2{ flex:2 }
+.rotate180{ transform: rotate(180deg) }
+.rotate-90{ transform: rotate(-90deg) }
+.transiform{ transition: all 0.2s 0s ease }
+.m-auto{ margin-left:auto;margin-right: auto; }
+.pointer{ cursor: pointer; }
+.rem { font-size: 1rem }
+.box-shadow{ box-shadow: 1px 3px 27px 0px rgba(131, 136, 142, 0.3); }
+.border{ border: 1px solid #e4e7ed }
+
+.second-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #5CCAFE;
+  text-align: center;
+}
+
+.third-title {
+  height: 52px;
+  line-height: 52px;
+  font-size: 24px;
+  color: #FFFFFF;
+  display: inline-block;
+  background: url('~@/assets/images/third-title-icon.png') no-repeat left bottom;
+  background-size: 45px 45px;
+  padding-left: 50px;
+}
+
+// 表格
+.table {
+  color: #fff;
+  font-size: 16px;
+  & + .table {
+    margin-left: 80px;
+  }
+  &,
+  .el-table__expanded-cell,
+  th,
+  tr,
+  tr:hover,
+  .el-table__body tr:hover > td {
+    background: transparent;
+  }
+  &::before {
+    height: 0;
+  }
+  thead {
+    color: #3ec2ed;
+    font-size: 16px;
+  }
+  td,
+  th.is-leaf {
+    border: none;
+  }
+  td,
+  th {
+    padding: 4px 0;
+  }
+  .el-table__body-wrapper {
+    margin-top: 12px;
+  }
+  .number {
+    height: 40px;
+    line-height: 40px;
+    color: #68FFFC;
+    &.serial-number {
+      background: url('~@/assets/images/number.png') no-repeat center;
+    }
+  }
+}
+// 大屏弹窗样式
+.screen-dialog.dialog{
+  .el-dialog{
+    background: #073F6E;
+  }
+  .el-dialog__header{
+    background: #073F6E;
+    .el-dialog__title{
+      color: #fff;
+    }
+  }
+  .el-dialog__headerbtn {
+    font-size: 24px;
+  }
+  & .el-dialog > .el-dialog__header::before {
+    background: #073F6E
+  }
+  .el-dialog__body {
+    padding: 0 0 20px;
+  }
+  .table {
+    // background-color: #073F6E;
+    background: #073F6E url('~@/assets/images/dialog-logo.png') no-repeat center;
+    background-size: cover;
+    margin-top: 10px;
+  }
+  .line {
+    width: 95%;
+    height: 1px;
+    background: #094B82;
+    border-radius: 4px;
+    margin: 0 auto;
+  }
+  .screen {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    .title {
+      font-size: 18px;
+      font-weight: 400;
+      color: #5CCAFE;
+    }
+    .button {
+      width: 110px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      background: rgba(26, 83, 125, 0.43);
+      border: 1px solid #3C83C0;
+      border-radius: 14px;
+      cursor: pointer;
+      margin-left: 10px;
+      font-size: 16px;
+      color: #5CCAFE;
+      &.active {
+        color: #fff;
+        background: #0E76C2;
+      }
+    }
+  }
+}
