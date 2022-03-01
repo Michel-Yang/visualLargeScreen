@@ -51,3 +51,22 @@ export function initChart(dom, option = {}, event) {
 ```
 
 # 公共过滤器的封装
+
+###### 千分位
+
+```javascript
+//正则实现方式
+export function thousandths(val){
+    if(!val){return;}
+    return val.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+```
+
+###### 保留小数点位数
+
+```javascript
+export function fixed(val,count){
+    if(!val){return;}
+    return val.toFixed(count);
+}
+```
