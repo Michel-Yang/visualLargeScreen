@@ -31,3 +31,23 @@ const htmlNode = document.querySelector("#");
 //对容器按照比例缩放
 htmlNode.style.transform = "scale(" + scale + ")";
 ```
+
+# Echarts封装
+
+Echarts 初始化函数的封装，主要基于显示容器初始化DOM节点，并将图表实例抛出，便于后期操作
+
+```javascript
+export function initChart(dom, option = {}, event) {
+  let chart = echarts.init(dom);
+  chart.setOption(option, true);
+  chart.resize();
+  if (event) {
+    chart.off("click");
+    chart.on("click", event);
+  }
+  return chart;
+}
+
+```
+
+# 公共过滤器的封装
