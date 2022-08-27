@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 import Vue from 'vue';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -12,9 +11,6 @@ import './assets/css/style.css';
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
-
-
-
 Vue.prototype.$apis = apis;
 
 new Vue({
