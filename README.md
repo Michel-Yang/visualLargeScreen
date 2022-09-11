@@ -70,3 +70,14 @@ export function fixed(val,count){
     return val.toFixed(count);
 }
 ```
+
+###### 时间组件封装
+
+```javascript
+
+basetime.vue
+BastimeRange.vue
+
+```
+
+
