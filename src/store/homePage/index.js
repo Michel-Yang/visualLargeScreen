@@ -1,10 +1,12 @@
 const moment = require("moment");
+
 const state = {
   activeTab: "operationView",
   timeType: "year",
   accuracyTime: moment().format("YYYY"),
   cityCode: 440000
 };
+
 const mutations = {
   SET_ACTIVE_TAB(state, activeTab) {
     state.activeTab = activeTab;
@@ -18,7 +20,9 @@ const mutations = {
     state.cityCode = cityCode;
   }
 };
+
 const actions = {};
+
 const getters = {};
 
 export default {
