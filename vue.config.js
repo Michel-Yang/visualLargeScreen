@@ -40,16 +40,17 @@ module.exports = {
       }
     }
   },
-  configureWebpack: {
-    plugins: [
-      //自动加载模块，而不必到处 import 或 require
-      new webpack.ProvidePlugin({
-        $: "jquery",
-        echarts: "echarts",
-        _: "lodash",
-        moment: "moment"
-      })
-    ]
+  configureWebpack: config=>{
+    console.log(config);
+    // plugins: [
+    //   //自动加载模块，而不必到处 import 或 require
+    //   new webpack.ProvidePlugin({
+    //     $: "jquery",
+    //     echarts: "echarts",
+    //     _: "lodash",
+    //     moment: "moment"
+    //   })
+    // ];
   },
 
   chainWebpack: config => {

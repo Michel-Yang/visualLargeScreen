@@ -25,8 +25,6 @@ export default {
       // htmlNode.style.width = standardWidth + "px";
       // htmlNode.style.height = clientHeight / scale + "px";
       htmlNode.style.transform = "scale(" + scale + ")";
-
-      // document.querySelector("body").setAttribute("id", "particles-js");
     }
   }
 };
