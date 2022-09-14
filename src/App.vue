@@ -30,7 +30,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "./assets/css/style.css";
 #app {
   width: 1920px;
   height: 1080px;

@@ -7,7 +7,7 @@ import router from './router';
 import store from './store';
 import _ from 'lodash';
 import apis from '@/api';
-import './assets/css/style.css';
+
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
