@@ -12,7 +12,8 @@ module.exports = {
   publicPath: "/",
   outputDir: "dist",
   assetsDir: "static",
-  lintOnSave: true,
+  lintOnSave: 'default',
+  productionSourceMap:true,
   css: {
     sourceMap: true,
     loaderOptions: {

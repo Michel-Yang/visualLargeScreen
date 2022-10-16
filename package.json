@@ -58,6 +58,6 @@
     "not ie <= 8"
   ],
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "src/*": "prettier --write --ignore-unknown"
   }
 }
